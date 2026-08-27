@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Etna';
+    src: url('fonte/Etna.ttf') format('ttf'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: rgb(54, 54, 54);
+    font-family: 'Etna', Etna;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.PomodoroPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+}
+
+
+/* Reset básico para TODOS os botões */
+button {
+    transition: transform 0.1s ease, opacity 0.1s ease;
+    background: transparent; 
+    cursor: pointer;         
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+
+    font-family: 'Etna', Etna;
+    color: white;
+}
+button:active{
+    transform: scale(0.92);
+    opacity: 0.8;
+}
+button:hover{
+    transform: scale(1.05);
+}
+
+
+#IniciarPausar img {
+    width: 180px; 
+    height: auto;
+    display: block;
+}
+#IniciarPausar:active{
+    transform: translateY(4px) scale(0.95);
+}
+
+/* Container que segura os botões secundários */
+.Botoes {
+    display: flex;
+    gap: 20px; 
+    
+}
+
+#PularTempo img,
+#ReiniciarTempo img {
+    width: 24px;  
+    height: auto;
+}
+
+#Tempo{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+
+
+.cabecalho{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 10%;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(234, 66, 47);
+    color: white;
+    box-sizing: border-box;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.menu a:hover{
+    text-decoration: underline;
+}
+/* Container das bolinhas */
+.indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* Estilo base de cada bolinha (Ciclos inativos) */
+.dot {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ffffff; /* Borda branca igual da imagem */
+    border-radius: 50%;       /* Torna o elemento totalmente redondo */
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Estilo da bolinha ativa (Ciclo atual) */
+.dot.ativo {
+    background-color: #ffffff; /* Preenche a bolinha com a cor branca */
+}

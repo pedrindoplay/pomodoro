@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="cabecalho">
+        <h1>Pomodoro</h1>
+        
+        <nav class="menu">
+            <a href="../Configuração/Configuracoes.html">Configurações</a>
+            <a href="#">Sobre</a>
+        </nav>
+    </header>
+
+
+    <main class="PomodoroPrincipal">
+        
+        <div class="indicadores" id="indicadores">
+            <span class="dot ativo"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+            
+        <button id="IniciarPausar">
+            <img src="../img/BotaoTomate.png" alt="Play">
+        </button>
+        
+        <div id="Tempo"></div>
+        
+        <div class="Botoes">    
+
+            <button id="PularTempo">
+                <img src="../img/pularW.png" alt="pular">Pular</Button>
+
+            <button id="ReiniciarTempo">
+                <img src="../img/reiniciarW.png" alt="reiniciar">Reiniciar</button>
+        </div>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
