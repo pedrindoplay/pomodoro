@@ -242,8 +242,8 @@ function carregarTemaSalvo() {
         if (labelTema) labelTema.textContent = 'Tema: Claro';
 
         // Troca as imagens para a versão preta
-        if (imgPular) imgPular.src = '../img/pular.png'; // Nome da sua imagem preta de pular
-        if (imgReiniciar) imgReiniciar.src = '../img/reiniciar.png'; // Nome da sua imagem preta de reiniciar
+        if (imgPular) imgPular.src = 'img/pular.png'; // Nome da sua imagem preta de pular
+        if (imgReiniciar) imgReiniciar.src = 'img/reiniciar.png'; // Nome da sua imagem preta de reiniciar
 
     } else {
         document.body.classList.remove('tema-claro');
@@ -251,8 +251,8 @@ function carregarTemaSalvo() {
         if (labelTema) labelTema.textContent = 'Tema: Escuro';
 
         // Volta as imagens para a versão branca
-        if (imgPular) imgPular.src = '../img/pularW.png';
-        if (imgReiniciar) imgReiniciar.src = '../img/reiniciarW.png';
+        if (imgPular) imgPular.src = 'img/pularW.png';
+        if (imgReiniciar) imgReiniciar.src = 'img/reiniciarW.png';
     }
 }
 
