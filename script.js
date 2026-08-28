@@ -1,8 +1,8 @@
 // ==========================================
 // 1. ÁUDIOS E ELEMENTOS DO POMODORO
 // ==========================================
-const alarme = new Audio('../Som/pop-up.mp3');
-const concluir = new Audio('../Som/Completo.mp3');
+const alarme = new Audio('Som/pop-up.mp3');
+const concluir = new Audio('Som/Completo.mp3');
 
 alarme.preload = 'auto';
 concluir.preload = 'auto';
