@@ -7,14 +7,44 @@
     <title>Configurações</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <h1>Pomodoro</h1>
+    <!-- Removido o style="display: none;" -->
+    <div class="painel-configuracoes" id="painelConfig">
         
-        <nav class="menu">
+        <div class="cabecalho-config">
+            <a href="">Sobre</a>
+            <h2>Configurações</h2>
             <a href="../Pomodoro/Pomodoro.html">Voltar</a>
-            <a href="#">Sobre</a>
-        </nav>
-    </header>
+        </div>
 
+        <div class="corpo-config">
+            
+            <!-- 1. Opção de Tema Escuro -->
+            <div class="opcao-item">
+                <span id="labelTema">Tema: Escuro</span>
+                <label class="switch">
+                    <input type="checkbox" checked id="toggleTema">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- 2. Controle de Volume -->
+            <div class="opcao-item controle-volume">
+                <input type="range" min="0" max="100" value="70" class="range-volume" id="rangeVolume">
+                <span class="icone-som" id="iconeSom">🔊</span>
+            </div>
+
+            <!-- 3. Botão de Idioma -->
+            <div class="opcao-item centralizado">
+                <button class="botao-idioma" id="btnIdioma">
+                    <span id="textoIdioma">ING</span>
+                    <span class="icone-globo">🌐</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Adicione a tag do script aqui no final para os botões funcionarem -->
+    <script src="../Pomodoro/script.js"></script>
 </body>
 </html>

@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+   <!-- essa div está responsavel por fazer o circulo vermelho em volta do tomate--> 
+    <div class="container-tomate">
+        <svg class="circulo-progresso" viewBox="0 0 200 200">
+            <circle class="circulo-fundo" cx="100" cy="100" r="92"></circle>
+            <circle id="circulo-timer" class="circulo-linha" cx="100" cy="100" r="92"></circle>
+        </svg>
+        
+        <button id="IniciarPausar">
+            <img src="../img/BotaoTomate.png" alt="Tomate">
+        </button>
+    </div>
     
+
+
     <header class="cabecalho">
         <h1>Pomodoro</h1>
         
@@ -25,10 +39,6 @@
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
-            
-        <button id="IniciarPausar">
-            <img src="../img/BotaoTomate.png" alt="Play">
-        </button>
         
         <div id="Tempo"></div>
         

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Etna';
-    src: url('fonte/Etna.ttf') format('ttf'); 
+    src: url('../fonte/Etna.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -133,4 +133,147 @@ button:hover{
 /* Estilo da bolinha ativa (Ciclo atual) */
 .dot.ativo {
     background-color: #ffffff; /* Preenche a bolinha com a cor branca */
+}
+/* Container que alinha o círculo e a imagem */
+.container-tomate {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* O SVG do círculo fica cobrindo toda a área do container */
+.circulo-progresso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Faz o tempo começar a diminuir do topo */
+    pointer-events: none;     /* Permite clicar no tomate normalmente */
+}
+
+/* Trilho de fundo fino e transparente */
+.circulo-fundo {
+    fill: none;
+    stroke: rgba(255, 71, 87, 0.2); /* Vermelho bem suave de fundo */
+    stroke-width: 2;
+}
+
+/* Anel vermelho animado igual ao da imagem */
+.circulo-linha {
+    fill: none;
+    stroke: #ff3b30;                /* Vermelho vibrante igual ao do tomate */
+    stroke-width: 2;                /* Espessura fina igual à foto */
+    stroke-linecap: round;
+    /* Comprimento da circunferência para raio 92px (2 * PI * 92 ≈ 578) */
+    stroke-dasharray: 578;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+/* Ajuste do botão do tomate para centralizar dentro do anel */
+#IniciarPausar {
+    z-index: 2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#IniciarPausar img {
+    width: 165px; /* Tamanho ajustado para deixar a margem perfeita até o anel */
+    height: auto;
+    display: block;
+}
+
+
+/* ==========================================
+   ESTILOS DO TEMA CLARO - TELA PRINCIPAL
+   ========================================== */
+
+/* Fundo da tela e texto geral */
+body.tema-claro {
+    background-color: #f4f4f9;
+    color: #222222;
+}
+
+/* Mostrador do tempo (MM:SS) */
+body.tema-claro #Tempo {
+    color: rgb(234, 66, 47);
+}
+
+/* Círculo / Progresso do Timer */
+body.tema-claro #circulo-timer {
+    stroke: #e73628; /* Mantém a cor da barra ou altera se quiser */
+}
+
+/* Indicadores de progresso (Dots/Bolinhas) */
+body.tema-claro .dot {
+    background-color: #cccccc; /* Cor das bolinhas inativas */
+}
+
+body.tema-claro .dot.ativo {
+    background-color: #e73628; /* Cor da bolinha do ciclo ativo */
+}
+
+/* Botões de Ação (Iniciar, Pausar, Pular, Reiniciar) */
+body.tema-claro .botao-acao,
+body.tema-claro #IniciarPausar,
+body.tema-claro #PularTempo,
+body.tema-claro #ReiniciarTempo {
+    background-color: #ffffff;
+    color: rgb(234, 66, 47);
+
+}
+
+/* Efeito Hover nos botões no tema claro */
+body.tema-claro .botao-acao:hover,
+body.tema-claro #IniciarPausar:hover {
+    background-color: #e73628;
+    color: #ffffff;
+    border-color: #e73628;
+}
+
+/* 1. Remove o fundo, borda e sombra do botão do Tomate */
+#IniciarPausar {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Garante que a imagem dentro do botão não ganhe bordas */
+#IniciarPausar img {
+    background: transparent !important;
+    border: none !important;
+    display: block;
+}
+
+/* 2. Estilização dos botões Pular e Reiniciar para remover o visual padrão */
+.Botoes button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: inherit; /* Mantém a cor do texto de acordo com o tema */
+}
+
+/* Ajusta o tamanho das imagens dentro dos botões inferiores */
+.Botoes button img {
+    width: 20px;
+    height: 20px;
+    background: transparent;
 }
