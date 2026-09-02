@@ -90,7 +90,7 @@ function resetarEstadoBotaoTomate() {
         clearInterval(timerId);
         timerId = null;
     }
-    if (imgTomate) imgTomate.src = '../img/BotaoTomatePlay.png';
+    if (imgTomate) imgTomate.src = 'img/BotaoTomatePlay.png';
 }
 
 function alternarTimer() {
@@ -105,7 +105,7 @@ function alternarTimer() {
             }
         }, 1000);
 
-        if (imgTomate) imgTomate.src = '../img/BotaoTomatePause.png';
+        if (imgTomate) imgTomate.src = 'img/BotaoTomatePause.png';
     } else {
         resetarEstadoBotaoTomate();
     }
