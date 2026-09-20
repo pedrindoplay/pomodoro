@@ -1,0 +1,317 @@
+@font-face {
+    font-family: 'Etna';
+    src: url('fonte/Etna.ttf') format('truetype');
+}
+
+/* Tela inicial */
+:root {
+    --vermelho: #f44335;
+    --escuro: #363636;
+    --branco: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--branco);
+    font-family: 'Etna', Arial, sans-serif;
+    background: var(--escuro);
+}
+
+.cabecalho {
+    height: 84px;
+    padding: 0 clamp(26px, 7vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--vermelho);
+}
+
+.perfil {
+    width: 42px;
+    height: 42px;
+    display: block;
+    border-radius: 50%;
+    background: var(--branco);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.ajuda {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.configurar {
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.PomodoroPrincipal {
+    min-height: calc(100vh - 84px);
+    padding: clamp(32px, 9vh, 90px) clamp(26px, 9vw, 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicadores {
+    display: flex;
+    gap: 15px;
+    margin-bottom: clamp(26px, 6vh, 52px);
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--branco);
+    border-radius: 50%;
+}
+
+.dot.ativo {
+    background: var(--branco);
+}
+
+.conteudo-pomodoro {
+    width: min(650px, 100%);
+    display: grid;
+    grid-template-columns: minmax(155px, .95fr) minmax(210px, 1.05fr);
+    align-items: center;
+    gap: clamp(34px, 10vw, 110px);
+}
+
+.container-tomate {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    display: grid;
+    place-items: center;
+    justify-self: center;
+}
+
+.circulo-progresso {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circulo-fundo {
+    fill: none;
+    stroke: rgba(255, 255, 255, .18);
+    stroke-width: 3;
+}
+
+.circulo-linha {
+    fill: none;
+    stroke: var(--vermelho);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 578;
+    transition: stroke-dashoffset 1s linear;
+}
+
+button {
+    border: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--branco);
+    outline-offset: 4px;
+}
+
+#IniciarPausar {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    background: transparent;
+}
+
+#IniciarPausar img {
+    display: block;
+    width: 145px;
+    height: 145px;
+    object-fit: contain;
+}
+
+.lado-direito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Tempo {
+    margin: 0 0 30px;
+    font-size: clamp(3.5rem, 9vw, 5.6rem);
+    line-height: .9;
+    letter-spacing: .03em;
+}
+
+.Botoes {
+    display: flex;
+    justify-content: center;
+    gap: clamp(30px, 7vw, 68px);
+}
+
+.Botoes button {
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 0;
+    background: transparent;
+    font-size: .95rem;
+}
+
+.Botoes button img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+body.tema-claro {
+    color: #242424;
+    background: #f3f3f3;
+}
+
+body.tema-claro .dot {
+    border-color: var(--vermelho);
+}
+
+body.tema-claro .dot.ativo {
+    background: var(--vermelho);
+}
+
+body.tema-claro .circulo-fundo {
+    stroke: rgba(0, 0, 0, .15);
+}
+
+body.tema-claro #Tempo {
+    color: var(--vermelho);
+}
+
+/* Celular deitado */
+@media (orientation: landscape) and (max-height: 600px) {
+    .cabecalho {
+        height: 62px;
+        padding: 0 clamp(26px, 6vw, 72px);
+    }
+
+    .perfil {
+        width: 34px;
+        height: 34px;
+    }
+
+    .ajuda {
+        width: 31px;
+        height: 31px;
+        border-width: 2px;
+        font-size: 1.25rem;
+    }
+
+    .configurar {
+        font-size: 2rem;
+    }
+
+    .PomodoroPrincipal {
+        min-height: calc(100vh - 62px);
+        padding: 16px clamp(30px, 10vw, 150px);
+    }
+
+    .indicadores {
+        margin-bottom: 12px;
+        gap: 11px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    .conteudo-pomodoro {
+        width: min(670px, 100%);
+        gap: clamp(44px, 12vw, 130px);
+    }
+
+    .container-tomate {
+        width: min(32vh, 175px);
+        height: min(32vh, 175px);
+    }
+
+    #IniciarPausar img {
+        width: min(25vh, 138px);
+        height: min(25vh, 138px);
+    }
+
+    #Tempo {
+        margin-bottom: 20px;
+        font-size: clamp(3.2rem, 12vh, 5rem);
+    }
+
+    .Botoes button {
+        flex-direction: row;
+        min-width: auto;
+        font-size: .8rem;
+    }
+
+    .Botoes button img {
+        width: 29px;
+        height: 29px;
+    }
+}
+
+@media (max-width: 520px) and (orientation: portrait) {
+    .cabecalho {
+        height: 72px;
+    }
+
+    .PomodoroPrincipal {
+        min-height: calc(100vh - 72px);
+        padding: 42px 26px;
+    }
+
+    .conteudo-pomodoro {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .container-tomate {
+        width: 180px;
+        height: 180px;
+    }
+
+    #Tempo {
+        font-size: 4.5rem;
+    }
+}

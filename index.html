@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+    <header class="cabecalho">
+        <a class="perfil" href="index.html" aria-label="Página inicial"></a>
+        <nav class="menu">
+            <a class="ajuda" href="Sobre.html" aria-label="Sobre">?</a>
+            <a class="configurar" href="Configuração/Configuracoes.html" aria-label="Configurações">⚙</a>
+        </nav>
+    </header>
+
+    <main class="PomodoroPrincipal">
+        
+        <!-- Ciclos -->
+        <div class="indicadores" id="indicadores">
+            <span class="dot ativo"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        
+        <!-- Timer -->
+        <div class="conteudo-pomodoro">
+            
+            <!-- Iniciar ou pausar -->
+            <div class="container-tomate">
+                <svg class="circulo-progresso" viewBox="0 0 200 200">
+                    <circle class="circulo-fundo" cx="100" cy="100" r="92"></circle>
+                    <circle id="circulo-timer" class="circulo-linha" cx="100" cy="100" r="92"></circle>
+                </svg>
+                
+                <button id="IniciarPausar">
+                    <img src="img/BotaoTomatePlay.png" alt="Tomate">
+                </button>
+            </div>
+
+            <!-- Tempo e ações -->
+            <div class="lado-direito">
+                <div id="Tempo"></div>
+                
+                <div class="Botoes">    
+                    <button id="PularTempo">
+                        <img src="img/pularW.png" alt=""><span data-i18n="skip">Pular</span>
+                    </button>
+
+                    <button id="ReiniciarTempo">
+                        <img src="img/reiniciarW.png" alt=""><span data-i18n="restart">Reiniciar</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

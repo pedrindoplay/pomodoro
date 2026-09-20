@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Configurações</title>
+</head>
+<body data-page="settings">
+    <!-- Configurações -->
+    <div class="painel-configuracoes" id="painelConfig">
+        
+        <div class="cabecalho-config">
+            <a class="ajuda" href="../Sobre.html" aria-label="Sobre">?</a>
+            <h2 data-i18n="settings">Configurações</h2>
+            <a class="voltar" href="../index.html" aria-label="Voltar">↩</a>
+        </div>
+
+        <div class="corpo-config">
+            
+            <!-- Tema -->
+            <div class="opcao-item">
+                <span id="labelTema">Tema: Escuro</span>
+                <label class="switch">
+                    <input type="checkbox" checked id="toggleTema">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Volume -->
+            <div class="opcao-item controle-volume">
+                <input type="range" min="0" max="100" value="70" class="range-volume" id="rangeVolume">
+                <span class="icone-som" id="iconeSom">◖)))</span>
+            </div>
+
+            <!-- Idioma -->
+            <div class="opcao-item centralizado">
+                <button class="botao-idioma" id="btnIdioma">
+                    <span id="textoIdioma">ING</span>
+                    <span class="icone-globo">◎</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>
