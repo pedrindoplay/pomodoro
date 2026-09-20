@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Etna';
     src: url('../fonte/Etna.ttf') format('truetype');
@@ -300,4 +301,227 @@ body.tema-claro .range-volume {
     .icone-globo {
         font-size: 1.2rem;
     }
+=======
+@font-face {
+    font-family: 'Etna';
+    src: url('../fonte/Etna.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================================
+   1. REGRA DE TEMAS (Geral)
+   ========================================== */
+body {
+    background-color: #333333;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema Claro */
+body.tema-claro {
+    background-color: #f4f4f9;
+    color: #222222;
+}
+
+/* ==========================================
+   2. PAINEL DE CONFIGURAÇÕES
+   ========================================== */
+.painel-configuracoes, 
+.painel-configuracoes *, 
+.painel-configuracoes button, 
+.painel-configuracoes input {
+    font-family: 'Etna', sans-serif !important;
+}
+
+.painel-configuracoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333333;
+    color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Corrigido de border-border-box */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Adaptação do Painel para o Tema Claro */
+body.tema-claro .painel-configuracoes {
+    background-color: #f4f4f9;
+    color: #222222;
+}
+
+/* Cabeçalho Vermelho */
+.cabecalho-config {
+    background-color: #e73628;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    color: #ffffff;
+}
+
+.cabecalho-config h2 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.cabecalho-config a,
+.botao-voltar {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.icone-ajuda {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Corpo do Painel */
+.corpo-config {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.opcao-item {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: bold;
+    color: white; /* Herda a cor do tema (Branco ou Escuro) */
+}
+body.tema-claro .opcao-item{
+    color: rgb(234, 66, 47);
+}
+
+.opcao-item.centralizado {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* 1. Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 32px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #ffffff;
+    border-radius: 34px;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+/* Borda do switch fica escura no tema claro */
+body.tema-claro .slider {
+    border-color: #222222;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+body.tema-claro .slider:before {
+    background-color: rgb(234, 66, 47);
+}
+
+input:checked + .slider:before {
+    transform: translateX(32px);
+}
+
+/* 2. Barra de Volume */
+.controle-volume {
+    gap: 16px;
+}
+
+.range-volume {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 3px;
+    outline: none;
+}
+
+body.tema-claro .range-volume {
+    background: #cccccc;
+}
+
+.range-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e73628;
+    cursor: pointer;
+}
+
+.icone-som {
+    font-size: 22px;
+}
+
+/* 3. Botão de Idioma */
+.botao-idioma {
+    background-color: #e73628;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+>>>>>>> b6fd8a0809e3a3555fff5a1a0bbe07030d53fd8e
 }
